@@ -104,14 +104,23 @@ export default function HeroPage() {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: 'spring', stiffness: 100, damping: 20 },
+  import type { Variants } from "framer-motion";
+
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 16,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
     },
-  };
+  },
+};
 
   return (
     <div className="relative min-h-screen bg-[#020203] text-neutral-100 overflow-hidden font-sans selection:bg-indigo-500/30 selection:text-indigo-200 flex flex-col justify-between">
