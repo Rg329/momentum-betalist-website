@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 // Easily customizable screenshot paths. Place these files in your /public directory.
@@ -89,7 +90,7 @@ export default function HeroPage() {
 
   const ArrowRightIcon = () => (
     <svg className="w-4 h-4 ml-1.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
     </svg>
   );
 
@@ -102,8 +103,8 @@ export default function HeroPage() {
       },
     },
   };
-  
-  const itemVariants: Variants = {
+
+  const itemVariants = {
   hidden: {
     opacity: 0,
     y: 16,
@@ -112,9 +113,7 @@ export default function HeroPage() {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 20,
+      duration: 0.5,
     },
   },
 };
@@ -404,7 +403,7 @@ export default function HeroPage() {
           <motion.div 
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-            className="w-1.2 h-1.5 bg-neutral-400 rounded-full"
+            className="w-1 h-1.5 bg-neutral-400 rounded-full"
           />
         </div>
       </div>
